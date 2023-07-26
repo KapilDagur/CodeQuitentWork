@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial,sans-serif;
+    background-color: #f2f2f2;
+}
+
+.auth{
+    width: 360px;
+    height: 400px;
+    border: 2px solid #000;
+    border-radius: 5%;
+    margin: 100px auto;   
+}
+
+.chatapp{
+    margin: 0 0;
+    background-color: #ff6600;
+    border-top-left-radius: 18px; 
+    border-top-right-radius: 18px;
+    text-align: center;
+}
+.signup-form{
+    margin-top: 20px;
+}
+
+input{
+    display: block;
+    height: 30px;
+    margin-left: 40px;
+    border-radius: 15px;
+    font-size: large;
+    width: 300px;
+}
+label{
+    margin: auto 10px;
+    display:flex;
+}
+
+#auth-type-label{
+    text-align: center;
+    margin: 0px 0px;
+    background-color: #0ff;
+}
+
+button{
+    display: block;
+    width: 300px;
+    height: 48px;
+    cursor:pointer;
+    margin: 10px 30px;
+    font-size:x-large;
+    background-color: #0b0;
+    border-radius: 25px;
+}
+
+#toggle-signin{
+    background-color: #a0f;
+}
+
+#toggle-signup{
+    background-color: #a0f;
+}

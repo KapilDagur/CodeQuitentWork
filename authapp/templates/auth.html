@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application | Auth Page</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial,sans-serif;
+            background-color: #f2f2f2;
+        }
+        
+        .auth{
+            width: 360px;
+            height: 400px;
+            border: 2px solid #000;
+            border-radius: 5%;
+            margin: 100px auto;   
+        }
+        
+        .chatapp{
+            margin: 0 0;
+            background-color: #ff6600;
+            border-top-left-radius: 18px; 
+            border-top-right-radius: 18px;
+            text-align: center;
+        }
+        .signup-form{
+            margin-top: 20px;
+        }
+        
+        input{
+            display: block;
+            height: 30px;
+            margin-left: 40px;
+            border-radius: 15px;
+            font-size: large;
+            width: 300px;
+        }
+        label{
+            margin: auto 10px;
+            display:flex;
+        }
+
+        #auth-type-label{
+            text-align: center;
+            margin: 0px 0px;
+            background-color: #0ff;
+        }
+
+        button{
+            display: block;
+            width: 300px;
+            height: 48px;
+            cursor:pointer;
+            margin: 10px 30px;
+            font-size:x-large;
+            background-color: #0b0;
+            border-radius: 25px;
+        }
+
+        #toggle-signin{
+            background-color: #a0f;
+        }
+
+        #toggle-signup{
+            background-color: #a0f;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="auth" id="auth-container">
+            <h1 class="chatapp">Auth Page</h1>
+            <h2 id="auth-type-label">Register Page</h2>
+            <div id="signup-form">
+                <form action="/register" method="post">
+                    <label for="username">Username :</label>
+                    <input type="text" name="username" id="username-signup" placeholder="username" minlength="8"/>
+                    <label for="email">Email :</label>
+                    <input type="email" name="email" id="email-signup" placeholder="user@host.com"/>
+                    <label for="password">Password :</label>
+                    <input type="password" name="password" id="password-signup" placeholder="*******" minlength="8"/>
+                    <button type="submit" id="submit-signup">Register</button>
+                    <button type="button" id="toggle-signin">Switch to Log in</button>
+                </form>
+            </div>
+            <div id="signin-form" style="display: none;">
+                <form action="/login" method="post">
+                    <label for="email">Email :</label>
+                    <input type="email" name="email" id="email-signin" placeholder="user@host.com" minlength="8"/>
+                    <label for="password">Password :</label>
+                    <input type="password" name="password" id="password-signin" placeholder="*******" minlength="8"/>
+                    <button type="submit" id="submit-signin">Log in</button>
+                    <button type="button" id="toggle-signup">Switch to Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const signin_toggle = document.getElementById('toggle-signin');
+        const signup_toggle = document.getElementById('toggle-signup');
+        const signup_div = document.getElementById('signup-form');
+        const signin_div = document.getElementById('signin-form');
+        const auth_type_label = document.getElementById('auth-type-label');
+
+        signin_toggle.addEventListener('click',(ev)=>{
+            ev.preventDefault();
+            signup_div.style.display = 'none';
+            signin_div.style.display = 'block';
+            auth_type_label.innerHTML = "Log in Page";
+        });
+
+        signup_toggle.addEventListener('click',(ev)=>{
+            ev.preventDefault();
+            signup_div.style.display = 'block';
+            signin_div.style.display = 'none';
+            auth_type_label.innerHTML = "Register Page";
+        });
+
+    </script>
+</body>
+</html>
