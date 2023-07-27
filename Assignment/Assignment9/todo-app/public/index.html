@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo App</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Todo App</h1>
+    <div class="task-form">
+      <input type="text" id="taskInput" placeholder="Enter task">
+      <button onclick="addTask()">Add Task</button>
+    </div>
+    <ul id="taskList"></ul>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

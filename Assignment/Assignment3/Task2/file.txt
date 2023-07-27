@@ -1,0 +1,3 @@
+Hello, Codequotient!!
+Myself Kapil Dagur. I'm student of B.tech CSE(Computer Science and Engineering).
+My Skills are : C/C++, Java, Core-Python, Django, Flask, DSA, MySQL, DBMS, OS, Networking etc.

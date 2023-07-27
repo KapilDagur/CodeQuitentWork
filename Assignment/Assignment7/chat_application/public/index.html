@@ -1,0 +1,26 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Chat App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Private Chat App!</h1>
+    <label for="username">Enter your username:</label>
+    <input type="text" id="username" />
+    <label for="friend">Enter your friend's name:</label>
+    <input type="text" id="friend" />
+    <button onclick="joinChat()">Join Chat</button>
+    <div id="chat-box"></div>
+    <label for="message">Type your message:</label>
+    <input type="text" id="message" />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

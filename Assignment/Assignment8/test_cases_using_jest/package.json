@@ -1,0 +1,11 @@
+{
+  "name": "test_cases_using_jest",
+  "version": "0.0.1",
+  "description": "A Progam Which test basic arithmatic operations.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "author": "Kapil Dagur",
+  "license": "MIT"
+}

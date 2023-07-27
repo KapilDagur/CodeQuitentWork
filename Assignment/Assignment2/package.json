@@ -1,0 +1,11 @@
+{
+  "name": "module-first",
+  "version": "0.0.1",
+  "description": "A Random Number Generator",
+  "main": "pro1.js",
+  "scripts": {
+    "test": "npm pro1"
+  },
+  "author": "Kapil Dagur",
+  "license": "MIT"
+}

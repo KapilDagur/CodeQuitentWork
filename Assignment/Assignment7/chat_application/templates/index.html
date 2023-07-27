@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application | Auth Page</title>
+</head>
+<body style="margin:0;">
+    <div class="container" style="display: flex;">
+        <section id="cred-info" style="width: 40%;">
+            <div id="userdetails" style="margin:10px 50px;">
+                <h1>User Details</h1>
+                <form>
+                    <label>UserName :</label>
+                    <input type="text" id="uname">
+                    <button id="userinfo">Submit</button>
+                </form>
+            </div>
+            <div id="friend-info" style="margin: 400px 50px; position: fixed; display: none;">
+                <h1>Friend Details</h1>
+                <form>
+                    <label>Friend UserName :</label>
+                    <input type="text" id="friend-uname">
+                    <button id="friendinfo">Search</button>
+                </form>
+            </div>
+        </section>
+        <section id="chat-conatiner" style="width: 60%;">
+            <div id="chat-div-box" style="height:500px ;border: 2px solid black;">
+                <div id="reciver-info">
+                    <h1 style="background-color: blueviolet;">Reciver</h1>
+                </div>
+                <ul id="chat-list" style="list-style-type: none;">
+                    <li>Hello</li>
+                    <li><p style="text-align: right; margin-right: 20px;">Hii</p></li>
+                </ul>
+            </div>
+            <div style="margin: 50px 150px; display: flex;">
+                <form  style="position: fixed;">
+                    <label>Message</label>
+                    <input type="text" style="width: 400px;" id="msg-inp"><button id="sent-msg">Sent</button>
+                </form>
+            </div>
+        </section>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+        const user_uname = document.getElementById('uname');
+        const user_submit_btn = document.getElementById('userinfo');
+        const friend_uname = document.getElementById('friend-uname');
+        const friend_submit_btn = document.getElementById('friend_info');
+        let user_data = {
+                "username" : null,
+            };
+        let connection;
+
+        user_submit_btn.addEventListener('click', (ev)=>{
+            ev.preventDefault();
+            user_data = {
+                "username" : user_uname.value.trim(),
+                "status" : true,
+                "count" : 0,
+            };
+            socket.emit('user connection',JSON.stringify(user_data));
+        });
+    </script>
+</body>
+</html>
